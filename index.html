@@ -9,17 +9,16 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --blue: #1a56db;
-    --blue-light: #e8efff;
-    --blue-mid: #3b6fd4;
-    --dark: #0f172a;
+    --red: #dc3545;
+    --red-dark: #b02a37;
+    --red-light: #fde8ea;
+    --dark: #1a1a1a;
     --mid: #334155;
     --soft: #64748b;
     --line: #e2e8f0;
-    --bg: #f8fafc;
+    --bg: #fdf2f3;
     --white: #ffffff;
-    --accent: #0ea5e9;
-    --success: #22c55e;
+    --gold: #d4a017;
   }
 
   html, body {
@@ -39,7 +38,7 @@
   /* HEADER BAND */
   .header-band {
     width: 100%;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a6e 60%, #1a56db 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #4a1015 60%, #dc3545 100%);
     padding: 48px 24px 80px;
     position: relative;
     overflow: hidden;
@@ -60,7 +59,7 @@
     bottom: -80px; left: -40px;
     width: 200px; height: 200px;
     border-radius: 50%;
-    background: rgba(14,165,233,0.12);
+    background: rgba(212,160,23,0.15);
   }
 
   .dots-pattern {
@@ -92,8 +91,11 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid rgba(255,255,255,0.3);
-    display: block;
-    background: linear-gradient(135deg, #1a56db, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    background: linear-gradient(135deg, #dc3545, #b02a37);
   }
 
   .avatar-badge {
@@ -117,7 +119,7 @@
 
   .tagline {
     font-size: 13px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.8);
     font-weight: 400;
     line-height: 1.5;
     animation: fadeUp 0.5s ease 0.2s both;
@@ -155,7 +157,7 @@
   }
 
   .contact-item:last-child { border-bottom: none; }
-  .contact-item:hover { background: var(--bg); }
+  .contact-item:hover { background: #fdf2f3; }
 
   .item-icon {
     width: 40px;
@@ -168,13 +170,11 @@
     flex-shrink: 0;
   }
 
-  .icon-phone  { background: #dcfce7; }
+  .icon-phone  { background: #fde8ea; }
   .icon-wa     { background: #dcfce7; }
   .icon-email  { background: #fef9c3; }
-  .icon-web    { background: #e0f2fe; }
+  .icon-web    { background: #fde8ea; }
   .icon-map    { background: #fce7f3; }
-  .icon-ig     { background: #fce7f3; }
-  .icon-fb     { background: #dbeafe; }
 
   .item-info { flex: 1; min-width: 0; }
 
@@ -201,70 +201,40 @@
     flex-shrink: 0;
   }
 
-  /* CTA BUTTONS */
+  /* CTA BUTTON */
   .cta-btn {
     display: block;
     width: calc(100% - 40px);
     max-width: 440px;
     margin: 16px auto 0;
-    padding: 16px;
-    background: linear-gradient(135deg, #22c55e, #16a34a);
+    padding: 18px;
+    background: linear-gradient(135deg, #dc3545, #b02a37);
     border: none;
     border-radius: 14px;
     color: white;
     font-family: 'Syne', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.02em;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     transition: opacity 0.2s, transform 0.15s;
-    box-shadow: 0 4px 20px rgba(34,197,94,0.3);
+    box-shadow: 0 4px 20px rgba(220,53,69,0.35);
     animation: fadeUp 0.5s ease 0.35s both;
   }
 
   .cta-btn:hover { opacity: 0.92; transform: translateY(-1px); }
   .cta-btn:active { transform: translateY(0); }
 
-  .weather-btn {
-    display: block;
-    width: calc(100% - 40px);
-    max-width: 440px;
-    margin: 10px auto 0;
-    padding: 15px;
-    background: linear-gradient(135deg, #0ea5e9, #0284c7);
-    border: none;
-    border-radius: 14px;
-    color: white;
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.2s;
-    box-shadow: 0 4px 20px rgba(14,165,233,0.3);
-    animation: fadeUp 0.5s ease 0.42s both;
-  }
-
-  .weather-btn:hover {
-    opacity: 0.92;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 24px rgba(14,165,233,0.4);
-  }
-
-  .weather-btn:active { transform: translateY(0); }
-
   /* SAVE VCARD */
   .save-btn {
     display: block;
     width: calc(100% - 40px);
     max-width: 440px;
-    margin: 8px auto 0;
+    margin: 10px auto 0;
     padding: 12px;
-    background: var(--bg);
+    background: var(--white);
     border: 1.5px solid var(--line);
     border-radius: 10px;
     color: var(--mid);
@@ -279,55 +249,7 @@
     animation: fadeUp 0.5s ease 0.4s both;
   }
 
-  .save-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
-
-  /* SOCIAL GRID */
-  .social-section {
-    width: calc(100% - 40px);
-    max-width: 440px;
-    margin: 16px auto 0;
-  }
-
-  .social-title {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--soft);
-    margin-bottom: 10px;
-    padding-left: 4px;
-  }
-
-  .social-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
-  }
-
-  .social-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 14px 8px;
-    background: white;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    text-decoration: none;
-    color: var(--mid);
-    font-size: 11px;
-    font-weight: 500;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-
-  .social-btn:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(26,86,219,0.12);
-  }
-
-  .social-btn span { font-size: 22px; }
+  .save-btn:hover { border-color: #dc3545; color: #dc3545; background: #fde8ea; }
 
   /* FOOTER */
   .footer {
@@ -360,60 +282,50 @@
   <div class="dots-pattern"></div>
   <div class="header-content">
     <div class="avatar-wrap">
-      <img src="https://raw.githubusercontent.com/locutoriororaima/mi-tarjeta/main/Foto-perfil.jpg" alt="Roraima" class="avatar">
+      <div class="avatar">🍽️</div>
       <div class="avatar-badge"></div>
     </div>
-    <div class="name">Bar Resturant Kupula</div>
-    <div class="tagline">Menú, Pintxos, Bebidas</div>
+    <div class="name">Bar Restaurant Kupula</div>
+    <div class="tagline">Menú · Pintxos · Bebidas</div>
   </div>
 </div>
 
 <div class="card-float">
-  <div class="contact-list" id="contactList">
-    </div>
+  <div class="contact-list" id="contactList"></div>
 </div>
 
 <a class="cta-btn" id="mainCta" href="#" target="_blank">
-  🍽️ Reservas
+  🍽️ &nbsp;Reservar Mesa
 </a>
 
-<a class="save-btn" id="saveVcard" href="#" style="display:none">
-  ＋ Guardar Contacto
+<a class="save-btn" id="saveVcard" href="#">
+  💾 &nbsp;Guardar Contacto
 </a>
 
-<div class="social-section" id="socialSection" style="display:none">
-  <div class="social-title">Síguenos</div>
-  <div class="social-grid" id="socialGrid"></div>
-</div>
-
-<div class="footer">Tarjeta Digital Empresarial</div>
+<div class="footer">Bar Restaurant Kupula · Zubiaga Kalea 3, Mungia</div>
 
 <script>
 // ════════════════════════════════════════════════════════════
-// DATOS REALES DE RORAIMA — ACTUALIZADOS E INTEGRADOS
+// DATOS DEL BAR KUPULA
 // ════════════════════════════════════════════════════════════
 const DATA = {
   nombre:     "Bar Restaurant Kupula",
-  tagline:    "Menú - Pintxos - Bebidas",
+  tagline:    "Menú · Pintxos · Bebidas",
   telefono:   "+34 946 751 869",
   whatsapp:   "34946751869",
-  email:      "locutorio.roraima@gmail.com",
-  website:    "https://forms.gle/3ARWkyJot42vpe768",
+  email:      "barkupula@gmail.com",
   reservas:   "https://forms.gle/3ARWkyJot42vpe768",
   direccion:  "Zubiaga Kalea 3, 48100 Mungia, Bizkaia",
-  instagram:  "multiserviciosroraimamungia",
-  facebook:   "locutorio.roraima",
+  mapsQuery:  "Bar+Restaurant+Kupula+Mungia",
   
-  // Mensaje gancho optimizado que despierta al bot automático
-  whatsappMsg: "Hola Kupula, una consulta..."
+  whatsappMsg: "Hola Kupula, quiero reservar una mesa."
 };
-// ════════════════════════════════════════════════════════════
 
 function buildPage() {
-  // Configurar el botón verde de acción principal (CTA) hacia la landing de cotizaciones
-  document.getElementById('mainCta').href = DATA.cotizaciones;
+  // Configurar el botón CTA principal
+  document.getElementById('mainCta').href = DATA.reservas;
 
-  // Lista de contacto con enlaces de acción corregidos
+  // Lista de contacto
   const contacts = [
     { 
       icon: '📞', cls: 'icon-phone', label: 'Teléfono', 
@@ -421,26 +333,24 @@ function buildPage() {
       href: `tel:${DATA.telefono.replace(/\s+/g, '')}` 
     },
     { 
-      icon: '<img src="whatsapp.png" alt="" style="width:24px; height:24px; vertical-align:middle; display:inline-block;">', cls: 'icon-wa',  
-      label: 'WhatsApp',
-      value: "Pincha aquí",
+      icon: '💬', cls: 'icon-wa', label: 'WhatsApp', 
+      value: 'Reservar por WhatsApp', 
       href: `https://wa.me/${DATA.whatsapp}?text=${encodeURIComponent(DATA.whatsappMsg)}` 
     },
     { 
-      icon: '<img src="gmail.png" alt="" style="width:24px; height:24px; vertical-align:middle; display:inline-block;">', cls: 'icon-email', 
-      label: 'Gmail', 
+      icon: '✉️', cls: 'icon-email', label: 'Email', 
       value: DATA.email, 
       href: `mailto:${DATA.email}` 
     },
     { 
-      icon: '🌐', cls: 'icon-web', label: 'Sitio Web', 
-      value: "Tienda Online",
-      href: DATA.website 
+      icon: '🍽️', cls: 'icon-web', label: 'Reservas', 
+      value: 'Formulario de reserva', 
+      href: DATA.reservas 
     },
     { 
       icon: '📍', cls: 'icon-map', label: 'Dirección', 
-      value: "Zubiaga Kalea, 3 Mungia", 
-      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Multiservicios Roraima Mungia')}` 
+      value: 'Zubiaga Kalea 3, Mungia', 
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(DATA.mapsQuery)}` 
     }
   ];
 
@@ -461,39 +371,13 @@ function buildPage() {
     list.appendChild(a);
   });
 
-  // vCard para guardar contacto sin caracteres de escape dañados
+  // vCard
   const vcard = buildVCard();
   const blob = new Blob([vcard], { type: 'text/vcard' });
   const url = URL.createObjectURL(blob);
   const btn = document.getElementById('saveVcard');
   btn.href = url;
-  btn.download = `Roraima-Mungia.vcf`;
-  btn.style.display = 'block';
-
-  // Redes sociales vinculadas de forma nativa
-  const socials = [
-    { 
-      icon: '<img src="instagram.png" alt="" style="width:24px; height:24px; vertical-align:middle; display:inline-block;">', 
-      label: 'Instagram', 
-      href: `https://www.instagram.com/${DATA.instagram}` 
-    },
-    { 
-      icon: '<img src="facebook.png" alt="" style="width:24px; height:24px; vertical-align:middle; display:inline-block;">', 
-      label: 'Facebook',  
-      href: `https://www.facebook.com/${DATA.facebook}`
-    }
-  ];
-
-  document.getElementById('socialSection').style.display = 'block';
-  const grid = document.getElementById('socialGrid');
-  socials.forEach(s => {
-    const a = document.createElement('a');
-    a.href = s.href;
-    a.target = '_blank';
-    a.className = 'social-btn';
-    a.innerHTML = `<span>${s.icon}</span>${s.label}`;
-    grid.appendChild(a);
-  });
+  btn.download = `Kupula-Mungia.vcf`;
 }
 
 function buildVCard() {
@@ -504,7 +388,7 @@ function buildVCard() {
     `TEL;TYPE=VOICE:${DATA.telefono}`,
     `TEL;TYPE=CELL:+${DATA.whatsapp}`,
     `EMAIL:${DATA.email}`,
-    `URL:${DATA.website}`,
+    `URL:${DATA.reservas}`,
     `ADR;TYPE=WORK:;;${DATA.direccion};;;;`,
     `NOTE:${DATA.tagline}`,
     'END:VCARD'
@@ -512,7 +396,6 @@ function buildVCard() {
   return lines.join('\r\n');
 }
 
-// Ejecutar la renderización de la página
 buildPage();
 </script>
 </body>
